@@ -312,6 +312,7 @@ my $octets_format = sub {
 
 my $mac_format = sub {
   my $value = shift;
+  return $value;
   if (     $value =~ /^\s*(([\dA-F]{2}[\-:]){5}[\dA-F]{2})/i
        and my $vendor = Net::MAC::Vendor::lookup($1)
      )
