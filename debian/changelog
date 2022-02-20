@@ -1,3 +1,1092 @@
+freeside (3.93~git-2022021921) unstable; urgency=medium
+
+  [ Ivan Kohler ]
+  * 3.93~git
+  * test billing events, RT#73949
+  * test billing events, RT#73949
+  * fix address stickiness on errors, RT#76000
+  * PDF quotation fixes, RT#75991
+  * fix multi-level data structures via XMLRPC API, RT#38254, RT#75279
+  * fix mason_comp via FS::SelfService
+  * don't echo back a password in the error message
+
+  [ Christopher Burger ]
+  * RT# 37099, Updated Post payment button to have an id, and updated javascript to disable submit button when multiple customers found
+
+  [ root ]
+  * RT# 21110 Unparsable age error. Added javascript to validate field prior to submitting the form.  Also place checked prior entry in database.
+  * RT# 21110 Unparsable age error. Added javascript to validate field prior to submitting the form. Also place checked prior entry in database.
+  * RT# 21110 Unparsable age error. Added javascript to validate field prior to submitting the form. Also place checked prior entry in database.
+  * RT# 21110 Unparsable age error.  Added documentation to the footer to show how to validate a form.
+
+  [ Christopher Burger ]
+  * RT# 21110, Updated files to use jquery-validate jquery plugin. This allows for field validation instead of just form validation. Also updated footer so it does not use experimental keys on scalar. Dereferenced hash ref prior to using keys.
+  * RT# 21110 - fixed bad link on license.html
+  * RT# 21110 - cleaned up jQuery Validate link to be compatible with other links.
+  * RT# 74122 - Updated Change History to be more user friendly.  Tags are now color coded user readable.
+  * RT# 74666, Added quotation description to customer quotation list and quotation view
+  * RT# 71419 Updated Advanced wireless broadband report with new option to display package name.
+  * RT# 71419 Added Cancel date option, and updated package name
+  * RT# 74666 - fixed display error on v3.
+
+  [ Ivan Kohler ]
+  * check AU postal codes, RT#75998
+  * allow self-service logins with a + in email address
+  * better error importing credits with unknown customer numbers, RT#76184
+  * skip non-linked cust_main_invoice records, RT#75629
+  * separate ACL for editing customer invoice terms, RT#75759
+  * separate ACL for editing customer invoice terms, RT#75759
+  * document shipping address fields in new_customer self-service API, RT#74008
+  * email referring customers on cancellation, RT#75756
+  * perform 3 character substring searches if you have 'List all customers', RT#75012, RT#76155
+
+  [ Christopher Burger ]
+  * RT# 74122 - updated change history to not show data with out a description
+  * RT# 76028 - Added search field Card Last 4#: to allow the filtering of payment report by last four of credit card used.  Only shows when card_masking_method is set to display last 4
+
+  [ Ivan Kohler ]
+  * add e911 to vitelity integration, RT#73618, RT#76262
+
+  [ Christopher Burger ]
+  * RT# 76171 - Added new svc_circuit field internal_circuit_id, updated label for existing svc_circuit field circuit_id to Provider Circuit ID.
+  * RT# 76171 - updated POD documentation
+  * RT# 76308 - Added action Sent HTTP or HTTPS post to event types Package, Customer, Batch Payment, Statement, Account service
+
+  [ Ivan Kohler ]
+  * change is
+  * fix times on appointments list (RT stores dates in UTC), RT#76486
+
+  [ Christopher Burger ]
+  * RT# 76171 - Added Interal Circuit Id to view circuit service page.
+  * RT# 75817 - Added the ability to set contacts password on the backend
+  * RT# 76312 - added customer tags to search options for payment report.
+  * RT# 76312 - improved code by using an array datatype rather than a string that is then later manipulated.
+  * RT# 75680 - created cdr batch import for telapi
+
+  [ Ivan Kohler ]
+  * fix country code browser on subsequent selections and add country name
+  * show a total range for prorate quotations
+  * show a total range for prorate quotations
+
+  [ Christopher Burger ]
+  * fixed header not displaying error
+  * RT# 74666 - fixed header not displaying error
+
+  [ Ivan Kohler ]
+  * fix outgoing email with commas in company name, RT#76449
+
+  [ Christopher Burger ]
+  * RT# 74666 - fixed vulnerability by escaping quotation_description var
+
+  [ Ivan Kohler ]
+  * at least get an error in the log
+
+  [ Christopher Burger ]
+  * RT# 74666 - updated some UI and description field location.
+  * RT# 76303 - added tag options to payments, batch payments, and statement billing event types
+  * RT# 76303 - fixed bug with tags not saving when selected
+  * RT# 76307 - Added billing event action to add a tag
+  * RT# 76307 - changed from returning an error to die on error.
+
+  [ Ivan Kohler ]
+  * correctly parse error response from e911 provisioning, RT#76262
+  * cant go back and cant stand still
+  * optimize rate display, RT#72030
+  * add ext and cdrtype options to Bicom PBXware CDR download, RT#76756
+  * change voip innovations CDR retrieval hostname, RT#76784
+  * search for payments by customer location, RT#76691
+
+  [ Christopher Burger ]
+  * RT#73993 - updated selfservice and ngselfservice to allow for the control of changes packages by agent.
+  * RT# 73993 updated ngselfservice to allow for package change.
+
+  [ Ivan Kohler ]
+  * fix inadvertant breakage in mason_comp, RT#73993, RT#75279
+  * remove debugging while fixing nadvertant breakage in mason_comp, RT#73993, RT#75279
+
+  [ Christopher Burger ]
+  * RT# 73993 - Updated process to display only packages customer has access to.
+  * RT# 73993 - updated ng_selfservice/services.php and ng_selfservice/packages_change.php to only pass one cgi param pkgnum and escaped pkg_label
+  * RT# 73993 - cleaned up code as requested, and created new call to get package info
+  * RT# 73993 - added new API call to list and documented it.
+
+  [ Ivan Kohler ]
+  * PG_BYTEA seems to be working nowadays, and uses much less memory than our alternative, RT#76731
+  * backport API_getinfo, RT#76831
+  * new backoffice API call customer_list_svcs
+
+  [ Christopher Burger ]
+  * RT# 38517 - added auto create of customer contact, if requestor is not a contact yet when adding a company to ticket.
+  * RT# 38517 - Added Lingua::EN::NameParse to parse real name into first and last name.
+  * RT# 76309 - Updated 3 email notices to use more billing event types
+
+  [ Ivan Kohler ]
+  * increase max inline message size from ~12k to ~120k, because HTML and 2017, RT#76879
+  * update fix-sequences for current DB
+
+  [ Christopher Burger ]
+  * RT# 38517 - fixed small error causing perl warning on start.
+
+  [ Justin DeVuyst ]
+  * Add configurable daily auto-disable for quotations.  See RT#74665.
+
+  [ Christopher Burger ]
+  * RT# 74665 -  set a default close date if global config quotation_disable_after_days is set
+  * RT# 74665 - small cleanup of code, removed text value
+  * RT# 74665 - removed section name and updated disable query to keep working on V3
+
+  [ Ivan Kohler ]
+  * VoIP innovations CDR import using SSL, RT#76784
+
+  [ Christopher Burger ]
+  * RT# 74537 - Added new selfservice config option to make ECHECK readonly on selfservice, updated selfservice and NGselfservice to look for this option
+  * RT# 74537 - added checks in MyAccount.pm for config option ach read only
+  * RT# 74537 - added check for config option selfservice-ACH_info_readonly to deletepayby method
+  * RT# 76905 - Created ability to delete payment account thru NG selfservice to test API change in ticket 74537
+  * RT# 74537 - removed link to list payment accounts page in ng_selfservice
+
+  [ Ivan Kohler ]
+  * enable all debugging when you turn on the checkbox, RT#76756
+  * fix agent-specific invoice_default_terms on new customer add, RT#76862
+
+  [ Christopher Burger ]
+  * RT# 74537 - updated to use only one payment account from cust_main
+  * RT# 75595 - Add billing event condition that will trigger when the contract end date is coming up
+  * RT# 75595 - made it only available for cust_pkg
+
+  [ Ivan Kohler ]
+  * voip innovations CDR import: don't cd / anymore, RT#76784
+  * fix agent display on reports when set in conf setting cust-fields, RT#76948
+
+  [ Christopher Burger ]
+  * RT# 74715 - fixed saving of census tract to actually save.
+
+  [ Ivan Kohler ]
+  * missing a use B:OP causes an error in rare edge cases with batching, RT#77003
+  * show database size detail
+  * add tilde to allowable punctuation, RT#77086
+  * add fulltexrt indexing to RT daily tasks
+  * exclude big non-operational history tables from backup
+  * voip innovations FTPS should be passive, RT#76784
+
+  [ Christopher Burger ]
+  * RT# 73490 - added global configuration to check if RT activity alert should be displayed.
+  * RT # 73490 - removed global conf and user pref check for hide tickets and added group access control.
+  * RT# 73490 - updated group access right with better name, and set one time migration to update all groups.
+  * RT# 76992 - Added 3 new import formats that combine Location and Phone Service
+  * RT# 76992 - removed some development code
+
+  [ Ivan Kohler ]
+  * document fields
+
+  [ Christopher Burger ]
+  * RT# 75817 - Added the ability to set contacts password on the backend
+  * RT# 75817 - updated set contact password to use popup window. fixes break in first contact.
+  * RT# 75817 - fixed contact password page to be more consistant with svc password page, updated javascript to check password as you type rather than when you leave the field.
+  * RT# 75817 - fixed enable selection to send password reset and to allow you to set password in one step
+  * RT# 75817 - fixed bug to only send email out to contact that is being enabled not to all enabled contacts
+  * RT# 75817 - Some small updates to be able to backport to V3 because of no cust_contact table in V3
+
+  [ Ivan Kohler ]
+  * expect-style ssh interaction, for interation w/cisco and other networking eqipment, RT#77180
+
+  [ Christopher Burger ]
+  * RT# 27969 - created 3 new api functions to add, edit and list advertising sources
+  * RT# 27969 - added documentation for advertising_sources api functions
+
+  [ Ivan Kohler ]
+  * separate access control for payment reports, RT#77007
+  * condition to consider referred customers base recurring, RT#75356
+  * referral count search, RT#75757
+  * referral status search, RT#75757
+  * add 54-g agent_custid format, RT#77110
+
+  [ Christopher Burger ]
+  * RT# 77200 - Changed fixed active date to a user input date
+
+  [ Ivan Kohler ]
+  * quick script to add armed forces USPS "state" abbrivations, RT#77312
+
+  [ Christopher Burger ]
+  * RT# 77245 - fixed bug when adding router, now services are added.
+
+  [ Ivan Kohler ]
+  * fix upgrade error, RT#77099, RT#76171
+  * fix prorate_day without force_prorate_day for recur_Common packages configured as subscription or prorate, RT#77140, RT#38191
+
+  [ Christopher Burger ]
+  * RT# 76171 - Added error check on field internal_circuit_id
+
+  [ Ivan Kohler ]
+  * if a single entry has bad UTF-8 chars, error out on that entry only instead of the whole conf page
+  * display usage fields in deterministic order
+
+  [ Christopher Burger ]
+  * RT# 77167 - Added the ability to import a list of contacts
+  * removed change to Mason.pm as not needed.
+  * RT# 77167 - removed change to Mason.pm as not needed.
+
+  [ Ivan Kohler ]
+  * current census year selection
+  * no longer supporting deb7 in new builds
+  * check more of the build infrastrcture in
+  * stretch-happy Releases files
+  * stretch-happy Releases files
+  * apache2-mpm-prefork is gone in debian 8+ (jessie+)
+  * alas
+
+  [ Christopher Burger ]
+  * RT# 77504 - Fixed error display issue, and javascript to prevent error.
+  * RT# 77504 - Documented javascript.
+
+  [ Ivan Kohler ]
+  * fiber and DSL http exports, RT#75932
+  * don't error out if there aren't any bz2 files anymore
+  * don't send zip+4 to vitelity e911, RT#76262
+
+  [ Christopher Burger ]
+  * RT# 77193 - Fixed default layer not displaying
+
+  [ Ivan Kohler ]
+  * sort by referral count, RT#75757
+  * sort by referral count, RT#75757
+
+  [ Christopher Burger ]
+  * RT# 76968 - Created new interactive map to select census tract
+  * rt# 76968 - updated Map service module link
+  * RT# 76968 - added header logo and css to map page, fixed address look up error, added leaflet to license
+  * RT# 76968 - Added logo only header file
+
+  [ Ivan Kohler ]
+  * fix MIME::Entity usage for perl 5.18+, RT#77890
+
+  [ Christopher Burger ]
+  * RT# 77160 - created new customer time span report
+  * RT# 77160 - updated query to not use cust_contact as that table does not exist in V3
+  * RT# 77332 - Fixed error where all packages updated with new next bill date, instead of just selected ones.
+  * RT# 77332 - updated new search option name to make it more clear.
+
+  [ Ivan Kohler ]
+  * scalability: always reap children, RT#78270
+
+  [ Mitch Jackson ]
+  * RT# 73211 - Add billing event: remove customer tag
+
+  [ Ivan Kohler ]
+  * better error handling when a package change fails, RT#78504
+  * no longer supporting deb7
+  * chris level up, add mitch
+
+  [ Christopher Burger ]
+  * RT# 29295 - added package_list and package_status to backend API.  Also added two new test files in bin to test new apis
+
+  [ Ivan Kohler ]
+  * add "trunkdst" to pbxware export, RT#78550
+  * fix logo encoding over xml-api for all functions that call skin_info internally, RT#75279
+
+  [ Mitch Jackson ]
+  * whitespace only
+  * Added option for Credit Report to include Voided Credits RT#73200
+  * Change selectbox to checkbox on Credit Report form RT#73200
+  * Add crednum (id) field to Credit Report RT#73200
+  * Substitute broken JSON::XS with Cpanel::JSON::XS
+  * RT# 73200 Show voided credits on Credit Report - backport fix
+
+  [ Christopher Burger ]
+  * RT# 78681 - fixed error where setup fee was being charged when prorate_defer_bill was set even though wave setup fee was selected.
+  * RT# 74959 - Fixed edit location link to acually save location
+  * RT# 24643, added waive setup fee option to change package screen.
+  * RT# 24643 - fixed error in saving waive setup fee flag when not selected
+  * Revert "RT# 24643 - fixed error in saving waive setup fee flag when not selected"
+  * RT# 24643 - fixed error in saving waive setup fee flag when not selected
+
+  [ Ivan Kohler ]
+  * Net::SSLglue never worked, need deb9 Net::FTP for this to work
+
+  [ Christopher Burger ]
+  * RT# 24643 - Version 3 changes to allow for waive setup fee on change packages
+
+  [ Ivan Kohler ]
+  * added warning to invoice_default_terms concerning changing it after going live, RT#78536
+
+  [ Christopher Burger ]
+  * RT# 78019 - Added total revenue line to Package churn report
+  * RT# 78019 - Added revenue difference to package churn report
+  * RT# 78019 - updated csv and excel export to set two decimal for revenue columns.
+  * RT# 74845 - fixed report to allow downloading even if there are errors.
+
+  [ Ivan Kohler ]
+  * fix changing employee password, RT#78939
+
+  [ Christopher Burger ]
+  * RT# 78450 - Fixed error with cdr import of AAPT CTOP format.  Changed regex to ignore white space at beginning.
+
+  [ Ivan Kohler ]
+  * add -u custnum_filename, -k skip_pkgpart and -v verbose, RT#79001
+  * add -k skip_pkgpart, RT#79001
+  * added -f flag to continue voiding even if an error is received, RT#78977
+
+  [ Christopher Burger ]
+  * RT# 76878 - Fixed installer checkbox to be sticky on error.
+
+  [ Ivan Kohler ]
+  * fix reports for 2018, RT#79090
+  * add "bill_only_pkg_dates" option to inbound voip billing, RT#79001
+  * happy new year
+  * extend vitelity integration: start and complete port-in, RT#73618, RT#78929
+  * fix direct use of customer_view_emails pref, RT#78617
+  * defined(@array) is deprecated
+
+  [ Christopher Burger ]
+  * RT# 79121 - Added new cdr import format for ani networks, and cron script for same
+  * RT# 79121 - added flag to store public key in known host file
+  * RT# 78617 - fixed preference field customer_view_emails to only except whole numbers, also added redirection back to preference page after edit.
+  * RT# 78617 - added alert code that can be placed on any page.
+  * RT# 78617 - removed some test code
+  * RT# 78617 - updated redirect to freeside_status to show update message
+  * RT# 78617 - removed redirect on pref change for V3
+
+  [ Ivan Kohler ]
+  * fix postinst?
+  * fix postinst?
+  * no need for errors decrypting inadvertantly encrypted payinfo to be fatal, RT#76385
+  * fix billing error with intro rate packages when billing dates have been edited non-sensically (bill date set even though package is not billing yet), RT#78349
+
+  [ Christopher Burger ]
+  * RT#79121 - added POD documentation
+  * RT# 79121 - fixed error with loading files with option a
+
+  [ Ivan Kohler ]
+  * ng selfservice deb9 packages
+
+  [ Christopher Burger ]
+  * RT# 76398 - Added auto status field or status table creation
+  * RT# 76398 - fixed sybase query for detecting tables and adding columns
+  * RT# 76398 - Fixed sybase connection and cleaned up code
+  * fix v3 batch name problem
+
+  [ Ivan Kohler ]
+  * fix masondata perm bs
+  * option to reprocess CDRs when voiding an invoice, RT#79001
+
+  [ Christopher Burger ]
+  * RT# 75095 - Added Ooma integration to one time charges
+  * RT# 75095 - Fixed use of a constant warning.
+  * RT# 75095 - updated mapping of ooma import file format
+  * RT# 75095 - added comment
+  * RT# 75095 - fixed ooma format to import all charges, and unified import process to allow new formats to be added quickly.  consistant with cdr imports
+  * RT# 75095 - Import one time charge V3 fix.
+
+  [ Ivan Kohler ]
+  * journal cdrbatch -> cdrbatchnum upgrade
+  * 2018
+
+  [ Christopher Burger ]
+  * RT# 79507 - enabled GCET import format
+  * RT# 78356 - broadband svc export to saisei
+  * RT# 78356 - cleaned up code and added debug code
+  * RT# 78356 - added ability to remove service thru api when service is unprovisioned.
+  * RT# 78356 - Added user documentation
+  * RT# 78356 - fix for email address lookup on V3
+
+  [ Ivan Kohler ]
+  * fix broadband reporting with giant query URLs (large numbers of package defs, etc.), RT#76765
+
+  [ Christopher Burger ]
+  * RT# 79497 - Changed email address check to all emails to be seperated by a space.  Added contacts to change history.
+  * RT# 79497 - change on v3 to carry over contacts on edit customer error.  V3 fix for displaying contacts in change history
+
+  [ Ivan Kohler ]
+  * duplicate tax rates from one state to others, RT#79635
+
+  [ Mitch Jackson ]
+  * RT# 79284 Option to set discount at Change Package
+
+  [ Christopher Burger ]
+  * RT# 79239 - added option to prorate first month to synchronize with customers other packages with sql_export plan
+
+  [ Mitch Jackson ]
+  * Syntax correction
+
+  [ Christopher Burger ]
+  * RT# 79780 - added a 60 second pause when there is a connection failure, then retry.  Do this for 20 hours
+
+  [ Ivan Kohler ]
+  * save logging information so we have a historical record of exactly when problems happened, RT#79780
+  * save logging information so we have a historical record of exactly when problems happened, RT#79780
+
+  [ Christopher Burger ]
+  * RT# 78356 - updated documentation and added ability to create access points as Saisei thru api
+  * RT# 78356 - added ability to create and modify rateplans and access point when changed on freeside.  cleanded up documentation.
+  * RT78356 - fixed exportname error added missing file
+  * RT# 78356 - fixed error where no export existed.
+  * RT# 78356 - fix for saisei integration
+
+  [ Mitch Jackson ]
+  * RT# 79636 Add conf flag invoice_sections_multilocation
+  * RT# 79636 Taxes per section when using invoice_sections
+  * RT# 79636 Update label for conf flag invoice_sections
+
+  [ Christopher Burger ]
+  * RT# 78356 - fixed v3 error with save
+  * RT# 33362 - fixed discount_mixin to not throw perl error when trying to discount non monthly recuring.
+  * RT# 33362 - fixed Argument 1d is not numeric when trying to discount daily recuring packages
+  * RT 37817 - created new billing event condition, invoice has not been sent.
+
+  [ Ivan Kohler ]
+  * invoice_sections_with_taxes per-agent, RT#79636
+
+  [ Christopher Burger ]
+  * RT# 80114 - added the population of startdate and billsec from ani cdr
+  * RT#39115 - added a optional display name for oid
+
+  [ Ivan Kohler ]
+  * invoice_usesummary is already agent virt, just need to be able to set it, RT#79636
+  * and turn it back off as an agent override, RT#79636
+  * fix v3 perf regression from #79636, RT#80177
+  * rendering time with lots of locations, RT#80177
+  * optimize invoice rendering, RT#80177
+
+  [ Christopher Burger ]
+  * RT# 75680 - Added date parse, and display insert error.
+
+  [ Ivan Kohler ]
+  * optimize invoice display with sections, RT#80177
+  * fix deployment zone error when there are no blocks yet, RT#78339, github-pr#66, thanks to sushrutp for the patch
+
+  [ Mitch Jackson ]
+  * RT# 79353 Update discount report - include waived setup fees
+  * RT# 79353 Update discount report - include waived setup fees
+  * RT# 79353 Update discount graph - include waived setup fees
+  * RT# 79636,42357 Suppress $0.00 summary line items
+  * RT# 79636,42357 invoice_sections_with_taxes bugfix
+  * RT# 78190 Fix format bug for invoices sectioned by location
+
+  [ Ivan Kohler ]
+  * ip allocation mutex for high-traffic implementations, RT#79825
+  * restore masked card info on batched payment report, RT#78166
+
+  [ Mitch Jackson ]
+  * RT# 79636 Location Summary Invoice Footer
+
+  [ Ivan Kohler ]
+  * bulk customer package edit from multiple source package definitions, RT#79885
+
+  [ Christopher Burger ]
+  * RT# 78356 - Updated documentation
+  * RT# 77160 - fixed report error when multiple canceled packages had they same datetime
+  * RT# 78131 - added ability to use message template for auto payment receipt and fixed NaN error when selecting nothing for config items with type select.
+  * RT# 78131 - update just for V3 backport
+  * RT# 77964 - Added check for prorate package in billing.pm fix for V3 backport
+
+  [ Ivan Kohler ]
+  * show account services in address block list too, RT#79825
+  * show account services in address block list too, RT#79825
+  * show account services in address block list too, RT#79825
+
+  [ Christopher Burger ]
+  * Revert "RT# 77964 - Added check for prorate package in billing.pm fix for V3 backport"
+  * RT78131 - Created new method to send message receipts so code does not have to be duplicated. Updated for V3 backport
+  * RT# 78131 - added documentation for new method.
+
+  [ Ivan Kohler ]
+  * include batch payment and statement events in reports, RT#80156
+
+  [ Christopher Burger ]
+  * RT# 77792 - fixed RBC format to display company name with business checking or savings is used
+  * RT# 77792 - V3 backport fix to access paytype
+  * RT# 77964 - Fixed error where deferring date did not work when waive setup fee was set.
+  * RT# 77964 - refined code to defer dates when waiving setup fee for prorated packages.
+  * RT# 79737 - Added ability to us a cc surcharge of a flat fee.
+  * RT# 79737 - fixed error in code
+
+  [ Mitch Jackson ]
+  * RT# 78665 Replace JSON::XS with Cpanel::JSON::XS
+  * RT# 78665 Fix JSON crash
+  * RT# 79549 Requre a Rate Plan to use voip_cdr Price Plan
+  * RT# 79549 Requre a Rate Plan to use voip_cdr Price Plan
+  * RT# 80268 Fix RADIUS usergroup UI bug
+
+  [ Ivan Kohler ]
+  * better filename with quotation # for PDF quotation attachments, RT#76003
+  * add to a section that exists in v3, RT#79737
+  * add warning to flat fee description too, RT#79737
+
+  [ Christopher Burger ]
+  * RT# 77917 - Updated event option Agent to allow for selection of multiple agents.
+  * RT# 77917 - fixed upgrade to work when all agents were selected.
+
+  [ Ivan Kohler ]
+  * fix/finish having history records show correct users for UI-triggered queue jobs on v3, RT#14829
+
+  [ Mitch Jackson ]
+  * RT# 32233 Mask ssn and stateid in selfservice
+  * RT# 80543 Crash creating new quotation
+
+  [ Ivan Kohler ]
+  * further optimize condition_sql for "Invoice eligible for automatic collection" condition, RT#74451
+
+  [ Christopher Burger ]
+  * RT# 77470 - added reason option to advanced package report with suspended status is selected.  Also added links to suspend and unsuspend when status active or suspended is used.
+  * RT# 77470 - Fixed error with select reason drop down box, not working when no pre_options listed
+  * RT# 29974 - Added ability to show invoice_pay_by_message on total new charges line rather than balance due line
+  * RT# 77498 - Customer Import now uses contact/Import.pm rather than contact_import.pm
+  * RT# 77498 - fixed getting filename in  V3
+  * RT# 73964 - Added biling event action to send an email to phone nunber, and updated email a notice to customer to allow emailing to phone number for email_to_voice service.
+  * RT# 73964 - Changed global config send-to-domain to email-to-voice_domain
+  * RT# 73964 - updated config description to better explain the email-to-voice_domain configuration option
+  * RT# 73964 - updated config description again to an even better description of the email-to-voice_domain configuration option
+  * RT# 73964 - V3 fixes for backport
+
+  [ Mitch Jackson ]
+  * RT# 31208,80543 Issue converting quotation
+
+  [ Christopher Burger ]
+  * RT# 74435 - Adding option to allow refunds using electronic check batch with RBC format.
+  * RT# 74435 - fixed errors in posting a echeck refund when no account is listed.
+  * RT# 74435 - Fixed error with refund link on payment history page not allowing batch refund when batch payment was made.
+  * RT# 74435 - added check, to make sure batch format can handle refunds
+
+  [ Ivan Kohler ]
+  * actually a card masking fix for fibernetics, but can't find the ticket
+
+  [ Mitch Jackson ]
+  * RT# 80624 Selfservice workaround for Bug on Win10 Edge Browser
+  * RT# 80624 Selfservice workaround for Bug on Win10 Edge Browser
+
+  [ Christopher Burger ]
+  * RT# 77160 - added date search on customer timespan report
+  * RT# 80898 - added config option to allow for the changing of the name for credit card surcharge on invoice.
+  * RT# 80898 - V3 fix for new configuration. set to section billing.
+  * RT# 78356 - added speed test fields for broadband service and new modifier to get speed from fcc_477 form in package
+  * RT# 78356 - made status bar more responsive on export.  Changed svc update to only happen when up and down speeds change.
+  * RT# 78356 - created import format for broadband service
+
+  [ Ivan Kohler ]
+  * cust_main fields only
+  * cust_main fields only
+  * add labels
+
+  [ Christopher Burger ]
+  * RT# 78356 - created script to cycle thru svc_broadband and move speed field values.
+  * RT# 78356 - sped up update query
+
+  [ Mitch Jackson ]
+  * RT# 78356 keys on hashref deprecated in perl 5.24
+
+  [ Christopher Burger ]
+  * RT# 77160 - fixed sql when joing cust_location
+  * RT# 77160 - updated date selection sql to make sure last cancel date falls with in range
+  * RT# 78356 - updated script to allow for null values when moving.
+
+  [ Mitch Jackson ]
+  * RT# 81150 Google now requires api key for drawing api
+  * RT# 80669 Cancelled customers on customer churn report
+  * RT# 80869 Harden process payment screen against Edge browser bug
+  * RT# 80869 Improve cust_main.paydate validation
+  * RT# 80869 freeside_upgrade fix for bad payment expiration dates
+
+  [ Christopher Burger ]
+  * RT# 75817 - updated UI to be more intuitive
+  * RT# 75817 - removed change password link as it is not needed anymore
+  * RT# 75817 - Added password change link to cust main page
+  * RT# 75817 - added new file to hold javascript for password validation
+  * RT# 75817 - fixed saving of password for new contacts, and password validation on dynamicly created rows
+  * RT# 75817 - cleaned up password validation error message
+  * RT# 75817 - fixed redirect error
+  * RT# 75817 - V3 css fix for table display
+  * RT# 81131 - updated Saisei export to create a virtual ap for multiple ips per customer
+  * RT# 39340 - Created minimal selfservice that only allows payments to be made, authorization is based on ip and mac address.  This is not done yet need to write routine to get mac address from radius server based on ip address.
+  * RT# 39340 - configured the minimal selfservice to get mac address from radius account table
+
+  [ Ivan Kohler ]
+  * add condition_sql optimization to "Package definitions" condition, RT#74456
+
+  [ Christopher Burger ]
+  * RT 39340 - v3 fix
+
+  [ Nick Logan ]
+  * RT# 74452 Optimize referral billing event condition
+  * RT# 74452 - address code format change request
+
+  [ Ivan Kohler ]
+  * Optimize "Customer has a referring customer" condition, RT#74452
+  * add condition_sql optimization to "Customer has a referring customer with uncancelled specific package(s)" condition, RT#74456
+  * optimize declined payment event condition, RT#81305
+
+  [ Christopher Burger ]
+  * RT# 39340 - removed min_selfservice dir and merged into ng_selfservice
+  * RT# 39340 - fixed skin_info caching issue
+
+  [ Mitch Jackson ]
+  * RT# 80624 FS::access_user methods for access_user_pref relation
+  * RT# 80624 Detect and warn for bad MS Edge version
+
+  [ Christopher Burger ]
+  * RT# 80511 - fixed error with sybase db connection
+
+  [ Ivan Kohler ]
+  * 3.x overtime
+  * fix paymentech batch approval status processing, RT#80622
+
+  [ Christopher Burger ]
+  * RT# 75817 - fixed selecting random password on custmain page
+  * RT# 75817 - V3 fix for redirect
+  * RT# 74523 Added fusionpbx import script, updated Import.pm to handle different import scripts. updated ivr_import to use new Import.pm
+
+  [ Ivan Kohler ]
+  * increase paymentech timeout, RT#81278
+
+  [ Christopher Burger ]
+  * RT# 75817 - fixed issue with contact edit on edit customer page
+
+  [ Mitch Jackson ]
+  * RT# 79705 Correct UTF-8 output for generated E-Mail
+  * RT# 79705 Correct UTF-8 output for generated E-Mail
+
+  [ Christopher Burger ]
+  * Revert "RT# 39340 - fixed skin_info caching issue"
+  * Revert "RT# 39340 - removed min_selfservice dir and merged into ng_selfservice"
+  * Revert "RT# 39340 - configured the minimal selfservice to get mac address from radius account table"
+  * Revert "RT# 39340 - Created minimal selfservice that only allows payments to be made, authorization is based on ip and mac address.  This is not done yet need to write routine to get mac address from radius server based on ip address."
+
+  [ Ivan Kohler ]
+  * CDR maximum duration, RT#81475
+
+  [ Jonathan Prykop ]
+  * RT#38217: Send email when logging conditions are met
+  * RT#38217 Send email when logging conditions are met [added null_right and msgtype]
+  * RT#38217 Send email when logging conditions are met [default template & dump-email_to upgrade]
+  * RT#38217 Send email when logging conditions are met [fixed bad char in template]
+  * RT#38217: Send email when logging conditions are met
+  * Revert "RT#38217: Send email when logging conditions are met"
+  * RT#38217: Send email when logging conditions are met [removed unwanted log levels, preserved level num mapping]
+
+  [ Mitch Jackson ]
+  * RT# 38217 Fix syntax warning from typo
+  * RT# 38217 FS::msg_template, cust_main is optional to render template
+
+  [ Ivan Kohler ]
+  * JSON::XS -> Cpanel::JSON::XS
+
+  [ Mitch Jackson ]
+  * RT# 71955 JSON::XS -> Cpanel::JSON::XS
+
+  [ Ivan Kohler ]
+  * Import Freeside format CDRs with * in number, RT#81404
+
+  [ Mitch Jackson ]
+  * RT# 73422 Improve customer contact report
+
+  [ Ivan Kohler ]
+  * clean up old RT sessions
+
+  [ Mitch Jackson ]
+  * RT# 31208 Fix Browse Discounts sorting error
+  * RT# 31208 Docs $FS::Record::qsearch_qualify_columns
+  * RT# 80555 Sanitize leading 0's from ip addr input
+  * RT# 38217 Fix JS bug when creating an email notice
+  * RT# 38217 Remove debugging
+
+  [ Christopher Burger ]
+  * RT# 74537 - fixed V3 error with making ACH payment with ACH-readonly config set
+
+  [ Ivan Kohler ]
+  * fix upgrade: clear bad cust_refund.source_paynum before encrypting, RT#81508
+
+  [ Christopher Burger ]
+  * RT# 38844 - Added customer number and name to commission credit event
+  * RT# 76722 - added option to search on tags not selected in advanced customer report
+
+  [ Mitch Jackson ]
+  * RT# 79353 Fix XSS
+  * RT# 31964 Fix XSS
+  * RT# 38217 Help for variables in System Log template
+  * RT# 38217 Fix substitutions for System Log email template
+
+  [ Jonathan Prykop ]
+  * RT#39627: System log daily context also includes Cron::bill and Cron::upload results
+
+  [ Ivan Kohler ]
+  * config for svc_hardware dup checking, RT#81534
+  * config for svc_hardware dup checking, RT#81534
+  * config for svc_hardware dup checking, RT#81534
+  * fix svc_acct->replace on bill, RT#81529
+  * fix missing plaintext invoice alternative, RT#81486
+
+  [ Christopher Burger ]
+  * RT# 79902 - fixed so change payment information link will still work when upgraded from V3 to V4 and restores functionality in V3
+
+  [ Ivan Kohler ]
+  * add option to limit automatic unsuspensions to a specific suspension reason type, RT#74448, RT#81634
+  * add date to quick payment entry, RT#73382
+
+  [ Christopher Burger ]
+  * RT# 73382 - fixed formatting issue with calendar
+
+  [ Ivan Kohler ]
+  * textarea for SQL external statements, RT#78543
+
+  [ Mitch Jackson ]
+  * RT# 81616 Mask CVV on Process Card Payment page
+  * RT# 77144 replace bytes_substr with Unicode::Truncate
+
+  [ Christopher Burger ]
+  * RT# 76093 - Added ability to charge a processing fee when taking a payment on the back end
+  * RT# 76093 - added ability for processing fee to be used with batch processing.
+  * RT# 76093 - added ability for processing fee to be used with batch processing. V3 change
+  * RT# 74435 - fixed so payment would auto unapply when doing a batch refund
+  * RT# 74453 - V3 fixes for backport
+
+  [ Ivan Kohler ]
+  * add option for multi-process billing to queue additional jobs for the same customer instead of skipping them, RT#81698
+  * add option for multi-process billing to queue additional jobs for the same customer instead of skipping them, RT#81698
+  * better debugging for htpasswd failure, RT#78179
+
+  [ Christopher Burger ]
+  * RT# 74435 - v3 display clean up to show refund account
+  * RT# 74435 - removed excess cust_pay code not needed in V3
+
+  [ Ivan Kohler ]
+  * remove debug
+  * Event fee reporting, RT#81713
+  * Event fee reporting, RT#81713
+  * delete fees, RT#81713
+
+  [ Mitch Jackson ]
+  * RT# 81712 Reduce unnecessary xmlhttp calls
+  * RT# 81712 Disallow empty feepart for pkg_fee billing event action
+
+  [ Ivan Kohler ]
+  * fix pending/invoiced selection, RT#81713
+  * fix fee deletion on v3, RT#81713
+  * delete fees, RT#81713
+  * Option to ignore old CDRs, RT#81480
+
+  [ Christopher Burger ]
+  * RT# 81594 - fix package churn report to properly get future revenue value of changed packages
+
+  [ Ivan Kohler ]
+  * add option for multi-process billing to queue additional jobs for the same customer instead of skipping them, RT#81698
+  * doc ship address, RT#33417
+
+  [ Christopher Burger ]
+  * RT# 80138 - Added config option to display/edit customer option to send or not send payment receipts
+  * RT# 81730 - fixed XMLHttpRequest async issue, and fixed changed .gov api link.
+  * RT# 81730 - added code to fix possible cross origin request error
+  * RT# 75628 - Added AutoreplyOrCorrespondence template to freeside core RT.
+
+  [ Ivan Kohler ]
+  * self-xss, RT#81757
+
+  [ Christopher Burger ]
+  * RT# 81752 - set RBC pay batch import options to use payment date from file rather than file processing date
+  * RT# 77532 - updated customer search bar to search contacts for info.
+  * RT# 77532 - Updated customer contact reports to display contact phone numers
+  * RT# 77532 - Updated advanced customer report to search contacts
+  * RT# 77532 - fixed search to use phone type from database
+
+  [ Ivan Kohler ]
+  * fix error w/current perl - can't call keys on a scalar hashref anymore, RT#77532
+  * spacing, and order like sql, RT#77532
+
+  [ Christopher Burger ]
+  * RT# 77532 - V3 fix changing cust_contact to contact
+
+  [ Mark Wells ]
+  * when canceling services across multiple packages, transaction-protect each one separately, from #37177
+
+  [ Ivan Kohler ]
+  * select agent and customer fields on attachment report, RT#81809
+
+  [ Mitch Jackson ]
+  * RT# 38217 Fix msg_template freeside-upgrade bug
+
+  [ Ivan Kohler ]
+  * menu link, RT#81809
+
+  [ Christopher Burger ]
+  * RT# 81126 - IP address field now shows required when required, IP address and Radius Group sticky on error when provisioning svc broadband
+  * RT# 81126 - fixed require svc_broadband ip check
+
+  [ Mitch Jackson ]
+  * RT# 76309 E-Mail validation methods
+  * RT# 76309 Add validation for part_event_option.optionvalue
+  * RT# 76309 Validate E-Mail address on billing event action notice_to
+  * RT# 76309 Fix typo
+
+  [ Ivan Kohler ]
+  * fix error linking legacy services, RT#81818
+  * Option to ignore old CDRs, RT#81480
+
+  [ Mitch Jackson ]
+  * RT# 32241 E911 Fee Report - Include fees bundled with packages
+  * RT# 32238 Billing Event cust_birthdate
+  * RT# 32238 Billing Event cust_birthdate - Amended labels
+  * RT# 32238 Billing Event cust_birthdate - Cleaner date compare window
+
+  [ Christopher Burger ]
+  * RT# 81557 - Added checkbox to validate cc on import, and cc validation.
+
+  [ Mitch Jackson ]
+  * Revert "RT# 79636,42357 Suppress $0.00 summary line items"
+  * RT# 81830 Critical log event for corrupted invoice data
+  * RT# 81574 Update Google Geocode API that sets location coordinates
+
+  [ Christopher Burger ]
+  * RT# 71289 - now shows contact email and phone changes while attached to customer
+
+  [ Mitch Jackson ]
+  * RT# 81574 Fix FS::GeocodeCache error with set_coord()
+
+  [ Christopher Burger ]
+  * RT# 77532 - search count is now correct
+
+  [ Mitch Jackson ]
+  * RT# 79916 Makefile copies latex .sty files
+
+  [ Christopher Burger ]
+  * RT# 74693 - Added Bulk edit of rates only
+  * RT# 74693 - Added city select when using tax classes
+  * RT# 81596 - fixed freeside-upgrade to not drop custom fields
+  * RT# - added Holidays thru 2019
+
+  [ Mitch Jackson ]
+  * RT# 40206 Add logging to freeside-cdr-mysql
+
+  [ Christopher Burger ]
+  * RT# 74537 - fixes error where paytype is blank in V3
+
+  [ Ivan Kohler ]
+  * http exports for additional service types, RT#81945
+  * pod
+
+  [ Christopher Burger ]
+  * RT 81913 - fixed error with batch email from advanced customer reports and contacts report
+  * RT# 37817 - Updated to set condition to check for invoice sending action
+  * RT# 37817 - Added more invoice sending actions
+  * RT# 35259 - Added option to attach a file thru quick ticket creation
+
+  [ Mitch Jackson ]
+  * RT# 38217 Log context list includes all contexts, not just predefined
+
+  [ Christopher Burger ]
+  * RT# 81249 - added ability to validate price plan option fields
+  * RT# 81249 - Fixed error where empty field becomes 0.
+  * RT# 37817 - added a declaration to cust bill event actions that send out invoices
+
+  [ Mitch Jackson ]
+  * RT# 81701 Add system log lines for EFT Canada upload/download
+  * RT# 81701 Add system log lines for EFT Canada upload/download
+
+  [ Christopher Burger ]
+  * RT# 78356 - fixed root path error, and the display of 404 status returns
+  * RT 78356 - fixed display of error on tower and sector exports
+  * rt# 78356 - fix v3 sector issue
+  * RT# 78356 - cleaned up error message display
+
+  [ Mitch Jackson ]
+  * RT# 81941 Broadsoft R22.0 cdr module
+  * RT# 81961 Include HTML for POD documentation
+  * RT# 81961 Move POD to HTML code into FS::Misc::Pod2Html module
+  * RT# 81961 Generate HTML from POD during debian package install
+  * RT# 81961 Pod to HTML from Makefile
+
+  [ Christopher Burger ]
+  * RT# 82087 - added logging for decode json error
+
+  [ Ivan Kohler ]
+  * fix skip_old when date has leading 0, RT#81480
+  * clarify CDR skipping options only work with prefix rating, RT#81480
+
+  [ Christopher Burger ]
+  * RT# 82087 - updated saisei documentation
+  * RT# 82854 - fixed pagination error
+  * RT# 82092 - custom fields now save and fixed so name label is displayed insted of actual field name
+  * RT# 82092 - added field validation
+  * RT# 82092 - Updated text to remind customer to restart apache after creating custom field
+  * RT# 82092 - Removed reload of DB Schema
+  * RT# 82092 - v3 display fix
+  * RT# 82092 - updated escaping html to use encode-entities
+
+  [ Mitch Jackson ]
+  * RT# 81961 Repair broken links in POD documentation
+  * RT# 81961 Pod2Html can use installed libs, or Freeside source
+  * RT# 81961 Pod2Html make docs during build, instead of install
+  * RT# 81961 Fix POD error
+  * RT# 81961 Pod2Html remove hard-coded perl src dirs
+
+  [ Christopher Burger ]
+  * RT# 82955 - add script to un refund electronic refunds in batch file
+  * RT# 82955 - fixed batch delete error
+  * RT# 82955 - will only try to delete if refund found
+  * RT# 82955 - fixed typo
+
+  [ Mitch Jackson ]
+  * RT# 82955 Fix egc_truncate error in FS::pay_batch::paymentech
+  * RT# 82942 Add FS::DBI, to fix database connection encoding bug
+  * RT# 82942 Replace DBI->connect() with FS::DBI->connect()
+  * RT# 82942 Force UTF8 client_encoding for Pg in RT::Handle
+
+  [ Christopher Burger ]
+  * RT# 82087 - updated error messages
+  * RT# 82988 - Fixed so only formats that can handle electronic refunds can download those files
+  * RT# 82988 - fixed resolve credit batches from RBC
+  * RT# 82988 - added check for batch payment upload scripts to make sure they can handle credit batches.
+
+  [ Mitch Jackson ]
+  * RT# 82942 Fix typo
+
+  [ Christopher Burger ]
+  * RT# 82988 - V3 fix
+  * RT# 82988 - updated paybatch upgrade to move credits from combined batch file to credit batch file
+  * RT# 83044 - fixed cc refund issues
+  * RT# 83044 - fixed so open empty batches not created on upgrade
+  * RT# 83044 - V3 fix
+  * RT# 79239 - updated code to use existing sub routine
+  * RT# 79239 - cleaned up code
+  * RT# 82992 - Added new cdr import format ThinQ
+  * RT# 82992 - added documentation to thinq cdr import
+  * RT# 82959 - added agent virtualization to unprovisioned services report.
+  * RT# 82992 - updated documentation
+  * RT 82999 - fixed issue where payment receipt only sent when one email present.
+
+  [ Ivan Kohler ]
+  * 3.93
+
+  [ Christopher Burger ]
+  * RT# 83082 - fixed so CC refunds cant go to batch
+  * RT# 74789 - Updated electronic check batch td_eft1464 format to except refunds (bank credit).
+  * RT# 74789 - updated format to handle credits in seperated batch files
+  * RT# 83057 - Added check for duplicate entry to avoid sql error
+  * RT# 83090 - updated customer search to allow multiple orderbys
+  * RT# 75357 - Prospects can now be disabled
+  * RT# 83075 - fixed sorting by referrals error
+  * RT# 76093 - removed unused file FS::cust_main::Billing_batch
+  * RT# 79913 - added ability to mass transfer customers to new agent
+  * RT# 79913 - Mass agent transfer files
+  * RT# 79913 - V3 fix for mass agent transfer
+
+  [ Ivan Kohler ]
+  * fix prospect state dropdown, RT#76043, fallout from #76000
+
+  [ Christopher Burger ]
+  * RT# 75357 - now new contact row in created in correct place
+  * RT# 75357 - v3 fix for creating contact rows in prospects
+  * RT# 83039 - only towers with sectors shown on provisioning page when export requires sectors
+  * RT# 82087 - added up and down speeds to report
+  * RT# 83203 - made Tower/Sector, speed_up, speed_down required
+
+  [ Ivan Kohler ]
+  * fix northern-911 and other unsuspend operations when exports override export_replace, RT#83178
+  * fix error display un-holding a package, RT#83178
+
+  [ Christopher Burger ]
+  * RT# 83204 - added link to service or tower causing error.
+  * RT# 83211 - Added service export error test report
+  * RT# 83211 - added new report
+  * RT# 83250 - added expected data description to sector fields
+  * RT# 83205 - fixed error with fields being sticky on error
+  * RT# 83259 - adding/editing tower sector will no check for required fields prior to exporting if able to export
+  * RT# 82132 - updated selfservice login to use config username-uppercase
+  * RT# 82132 - updated password reset by mail to use username-uppercase config
+  * RT# 83147 - Added new error message when email does not match because of case sensitivity
+  * RT# 83251 - created script to update service speeds
+  * RT# 83251 - added documentation
+  * RT# 83251 - added option to only update null fields
+  * RT# 82949 - added the ability to bulk increase package fees (setup and/or recurring) by a percentage
+  * RT# 82949 - changes section name from fees to pricing, better opiton
+  * RT# 82949 - fixed error where form submits on cancel
+  * RT# 83251 - added option to update tower/sector
+  * RT 83251 - moved script
+  * RT# 83341 - added ability to sort by name in advanced customer reports
+  * RT# 83179 - set agent num to use default agentnum if configured, and fixed adding contact rows
+  * RT# 83306 - fixed realtime refunds
+  * RT 77532 - added contact phone numbers to advanced customer report
+  * RT# 77532 - created method to display phone types
+  * RT# 75680 - fixed telapi_voip cdr csv import
+
+  [ Mitch Jackson ]
+  * RT# 83320 Fix UI bug managing taxes
+
+  [ Christopher Burger ]
+  * RT# 77532 - can search cust main phone numbers in advanced customer search
+  * RT# 77532 - fixed error where cust main fax not showing, and fixed checking of phonetypenum
+  * RT# 83365 - Added city select to work like back end
+  * RT# 83251 - changed name of script in documentation
+  * RT# 83436 - fixed Advanced Broadband Service Report when displaying phone numbers
+  * RT# 83251 - removed search for unprovisioned services
+
+  [ Mitch Jackson ]
+  * RT# 83460 Fix validation bug on part_event_option
+
+  [ Christopher Burger ]
+  * RT# 83450 - added fields interface and map_location to export
+  * RT83450 - V3 fix for tower/sector export
+  * RT# 83450 - added location to virtual ap and added script to force update of all virtual ap
+  * RT# 83450 - fixed rateplan export
+  * RT# 83450 - V3 fix for user update
+  * RT# 82137 - Added ability for processing fee to be pain on seperate invoice.
+  * RT# 82137 - default payment amount now has processing fee in total if processing fee exists.
+  * RT# 82137 - added processing fee template substitution.
+
+  [ Ivan Kohler ]
+  * fix intro rates packages vs discounts, RT#83503
+  * fix invoicing prorate packages when bill date is edited manually before first billing, RT#83503
+  * infinite CDR update: use billingcode field for dst instead of calltype, RT#83560
+  * really really
+  * fix slave IP display
+  * show deb pkg version
+  * bulk package cancellation
+  * release held packages when automatically unsuspending, RT#83847
+  * release held packages when automatically unsuspending, RT#83847
+  * suspend event option to skip packages with a start_date, RT#83847
+  * add dsl, circuit and fiber services to email and RT ticket exports, RT#84345
+  * CGI::param called in list context
+  * svc_hardware: better error messages for bad hw_addr when not validating as a MAC address, improve label display, RT#84773
+  * doc: return fields for customer_info, RT#84796
+  * skip RT sessions table
+  * XMLRPC::Lite split from SOAP::Lite
+  * deb 9
+  * deb 9
+  * fix rare FP rounding errors on void, RT#84904
+  * sha512 crypt() export
+  * sha512 crypt() export
+  * doc/presets for libnss-pgsql use, add sha512crypt option, RT#84826
+  * add credit reason selection, RT#85046
+  * ACL for hardware class config, RT#85057
+  * ACL for hardware class config, RT#85057
+  * add config to display note at top, RT#84990
+  * 2020 didn't go as planned, RT#85281
+  * disable fcc 477 deployment zones, RT#85668
+  * contractually guaranteed speed no longer required as of 2020, RT#85671
+  * fix apache dying off for no reason (32-bit only?)
+  * eliminate dups, RT#85671
+  * fix TeleAPI import (what kind of crack was Christopher smoking that he couldn't fix this for years?), RT#85784
+  * bulk change GID, RT#86006
+  * bulk change GID, RT#86006
+  * backup the schema for tables we don't need the data from. RT#85959
+  * deb 10
+  * debug
+  * just the relevant Pg info
+  * 2022
+
+  [ James Lucas III ]
+  * Remove orphaned closing </DIV>
+
+  [ Jim Lucas ]
+  * Added support for collecting censustract data from U.S. Census Bureau.
+  * Make end_year for reports current year + 3
+  * Escape single quotes in output from DB so the Javascript does not die when trying to populate the popup edit window.
+  * Disabled call to Net::MAC::Vendor::lookup as service is no longer working and was causing a huge delay in the page loading.
+  * Add default sorting on display tables.
+  * More MAC vendor loopups disabled
+  * Added default sort to Discounts page
+  * Setting default sorting for access_user.html
+  * Added default sort to Routers page.
+
+ -- Jim Lucas <jlucas@debian8.cmsws.com>  Sat, 19 Feb 2022 21:56:57 -0800
+
 freeside (3.92-1) unstable; urgency=medium
 
   * 3.92
